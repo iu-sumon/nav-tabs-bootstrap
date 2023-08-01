@@ -10,6 +10,24 @@
       integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
       crossorigin="anonymous"
     />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+      /* Add your CSS styles here */
+.container {
+    display: flex;
+    flex-direction: column;
+    /* Add any other styles you need */
+}
+
+
+.section{
+    /* Add styles specific to the third section */
+    width: fit-content;
+    overflow-y: scroll; /* Allow vertical scrolling */
+    max-height: 500px; /* Set a max-height to limit the scrolling area */
+}
+
+    </style>
   </head>
   <body>
     <section class="page">
@@ -45,13 +63,34 @@
           </div>
         </div>
       </div>
+
+      <div class="container">
+        <!-- First Section: News Titles -->
+        <div class="section">
+            <ul>
+              <li class="news-title" data-scroll-target="1">News Title 1</li>
+              
+                <!-- Add more news titles as needed -->
+            </ul>
+        </div>
+
+        <!-- Second Section: HTML Table -->
+        <div class="section">
+           <div id="full-details"> <div class="row mt-3 col-pad"> <div class="col highlight-column-name"> OPEN <div class="highlight-column-value"><span class="quote_open 1JANATAMFPUBLIC_open">-</span></div> </div> <div class="col highlight-column-name"> HIGH <div class="highlight-column-value"><span class="quote_high 1JANATAMFPUBLIC_high">-</span></div> </div> <div class="col highlight-column-name"> LOW <div class="highlight-column-value"><span class="quote_low 1JANATAMFPUBLIC_low">-</span></div> </div> <div class="col highlight-column-name"> YCP <div class="highlight-column-value"><span class="quote_prevclose 1JANATAMFPUBLIC_ycp">7.1</span></div> </div> <div class="col highlight-last-column-name"> TURNOVER <div class="highlight-column-value"><span class="quote_value 1JANATAMFPUBLIC_turnover">5,904</span></div> </div> </div> <div class="row mt-3 col-pad"> <div class="col highlight-column-name"> UP LIMIT <div class="highlight-column-value"><span class="quote_circuit_up">7.81</span></div> </div> <div class="col highlight-column-name"> DOWN LIMIT <div class="highlight-column-value"><span class="quote_circuit_down">6.39</span></div> </div> <div class="col highlight-column-name"> FLOOR <div id="floor_data" class="highlight-column-value">6.1</div> </div> <div class="col highlight-column-name"> 52W H/L <div id="whl52" class="highlight-column-value">6.5/6.1</div> </div> <div class="col highlight-last-column-name"> VOLUME <div class="highlight-column-value"><span class="quote_volume 1JANATAMFPUBLIC_vol">820</span></div> </div> </div> <div class="row mt-3 col-pad"> <div class="col highlight-column-name"> PE <div id="p_e" class="highlight-column-value">-</div> </div> <div class="col highlight-column-name"> RESERVE <div id="reserve" class="highlight-column-value">7.10cr</div> </div> <div class="col highlight-column-name"> NAV <div id="nav" class="highlight-column-value">10.80</div> </div> <div class="col highlight-column-name"> DIV.YIELD <div id="dividend_yield" class="highlight-column-value">10.94</div> </div> <div class="col highlight-last-column-name"> YEAR.END <div id="year_end" class="highlight-column-value">30-Jun</div> </div> </div> <div class="row mt-3 mb-1 col-pad"> <div class="col highlight-column-name"> FREE FLOAT <div id="free_float" class="highlight-column-value">21.74cr</div> </div> <div class="col highlight-column-name"> TOT. SHARE <div id="total_share" class="highlight-column-value">28.99cr</div> </div> <div class="col highlight-column-name"> MRKT.CAP <div id="market_cap" class="highlight-column-value">176.85cr</div> </div> <div class="col highlight-column-name"> PAIDUP <div id="paid_up_capital" class="highlight-column-value">289.92cr</div> </div> <div class="col highlight-last-column-name"> AUTRIZED <div id="authorized_capital" class="highlight-column-value">-cr</div> </div> </div> <div class="row mt-3 mb-1 col-pad"> <table class="highlights-data-table"> <tbody><tr> <td class="highlight-column-name">Q1</td> <td class="highlight-column-name">Q2</td> <td class="highlight-column-name">Q3</td> <td class="highlight-column-name">EPS(TTM)</td> <td class="highlight-column-name">LAST.DIV</td> </tr> <tr> <td><span class="q1_latest down">-0.23</span> <span id="q1_latest_diff" class="of_number_to_be_evaluated small-font red">(-0.43)</span> </td> <td><span class="q2_latest down">-0.28</span> <span id="q2_latest_diff" class="of_number_to_be_evaluated small-font red">(-0.47)</span> </td> <td><span class="q3_latest down">-0.05</span> <span id="q3_latest_diff" class="of_number_to_be_evaluated small-font red">(-0.06)</span> </td> <td><span class="eps_annual_ttm down">-0.75</span> <span id="eps_annual_ttm_diff" class="of_number_to_be_evaluated small-font red">(-0.99)</span> </td> <td class="highlight-column-value"><span id="dividend-cash">7%C</span> </td> </tr> <tr> <td id="q1_earlier" class="highlight-column-value prev">0.20</td> <td id="q2_earlier" class="highlight-column-value prev">0.19</td> <td id="q3_earlier" class="highlight-column-value prev">0.01</td> <td id="eps_annual_latest" class="highlight-column-value prev">0.24</td> <td id="dividend-stock" class="highlight-column-value prev">S</td> </tr> </tbody></table> </div> <div class="row mt-3 col-pad"> <div class="highlight-subtitle">Holdings [as on <span id="holding-subtitle">May 31, 2023</span>] </div> <table class="highlights-data-table"> <tbody><tr> <td class="highlight-column-name">Director</td> <td class="highlight-column-name">Govt.</td> <td class="highlight-column-name">Institute</td> <td class="highlight-column-name">Foreign</td> <td class="highlight-column-name">Public</td> </tr> <tr> <td class="highlight-column-value"><span id="sponsor_director_latest">25%</span> <span id="sponsor_director_change" class="highlight-column-value of_number_to_be_evaluated small-font">(0.00)</span> </td> <td class="highlight-column-value"><span id="govt_share_latest">0%</span> <span id="govt_share_change" class="highlight-column-value of_number_to_be_evaluated small-font">(0.00)</span> </td> <td class="highlight-column-value"><span id="institute_share_latest">34.94%</span> <span id="institute_share_change" class="highlight-column-value of_number_to_be_evaluated small-font red">(-0.03)</span> </td> <td class="highlight-column-value"><span id="foreign_share_latest">0%</span> <span id="foreign_share_change" class="highlight-column-value of_number_to_be_evaluated small-font">(0.00)</span> </td> <td class="highlight-column-value"> <span id="public_share_change" class="highlight-column-value of_number_to_be_evaluated small-font green">(+0.03)</span> <span id="public_share_latest">40.06%</span> </td> </tr> <tr> <td id="sponsor_director" class="highlight-column-value prev">25%</td> <td id="govt_share" class="highlight-column-value prev">0%</td> <td id="institute_share" class="highlight-column-value prev">34.97%</td> <td id="foreign_share" class="highlight-column-value prev">0%</td> <td id="public_share" class="highlight-column-value prev">40.03%</td> </tr> <tr> <td id="director_share_percentage" class="highlight-column-value small-font">7.25cr</td> <td id="govt_share_percentage" class="highlight-column-value small-font">0.00cr</td> <td id="institute_share_percentage" class="highlight-column-value small-font">10.13cr</td> <td id="foreign_share_percentage" class="highlight-column-value small-font">0.00cr</td> <td id="public_share_percentage" class="highlight-column-value" style="font-size:8px">11.61cr</td> </tr> </tbody></table> </div> </div>
+        </div>
+
+        <!-- Third Section: News Content -->
+        <div class="section section3" id="news-content-1">
+          Weekly NAV&quot;,&quot;nav&quot;,&quot;On the close of operation on July 13, 2023, the Fund has reported Net Asset Value (NAV) of Tk. 9.87 per unit on the basis of current market price and Tk. 11.17 per unit on the basis of cost price against face value of Tk. 10.00 whereas total Net Assets of the Fund stood at Tk. 2,861,514,582.00 on the basis of current market price and Tk. 3,238,784,624.00 on the basis of cost price after considering all assets and liabilities of the Fund.\r\n&quoWeekly NAV&quot;,&quot;nav&quot;,&quot;On the close of operation on July 13, 2023, the Fund has reported Net Asset Value (NAV) of Tk. 9.87 per unit on the basis of current market price and Tk. 11.17 per unit on the basis of cost price against face value of Tk. 10.00 whereas total Net Assets of the Fund stood at Tk. 2,861,514,582.00 on the basis of current market price and Tk. 3,238,784,624.00 on the basis of cost price after considering all assets and liabilities of the Fund.\r\n&quoWeekly NAV&quot;,&quot;nav&quot;,&quot;On the close of operation on July 13, 2023, the Fund has reported Net Asset Value (NAV) of Tk. 9.87 per unit on the basis of current market price and Tk. 11.17 per unit on the basis of cost price against face value of Tk. 10.00 whereas total Net Assets of the Fund stood at Tk. 2,861,514,582.00 on the basis of current market price and Tk. 3,238,784,624.00 on the basis of cost price after considering all assets and liabilities of the Fund.\r\n&quo
+        </div>
+    </div>
     </section>
 
-    <script
+    <!-- <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
       crossorigin="anonymous"
-    ></script>
+    ></script> -->
     <script
       src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
       integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
@@ -62,5 +101,23 @@
       integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
       crossorigin="anonymous"
     ></script>
+    <script>
+     $(document).ready(function() {
+    // Scroll to the news content when a news title is clicked
+    $(".news-title").on("click", function() {
+        const targetSection = $(this).data("scroll-target");
+        const targetContent = $("#news-content-" + targetSection);
+
+        // Check if the target content exists before scrolling
+        if (targetContent.length > 0) {
+            // Scroll to the target content
+            $(".section3").scrollTop(targetContent.position().top);
+        } else {
+            console.error("Target content not found!");
+        }
+    });
+});
+
+    </script>
   </body>
 </html>
